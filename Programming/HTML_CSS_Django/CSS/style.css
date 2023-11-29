@@ -1,0 +1,10 @@
+/*외부 스타일 시트 입니다. outcss.html*/
+
+h2 { 
+    color : blue; 
+}
+
+p { 
+    font-size: 40px; 
+    color : red; 
+}

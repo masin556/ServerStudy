@@ -1,0 +1,36 @@
+<!--Label과 함께 체크박스-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="get" action="test.php">
+        <fieldset>
+            <legend>신청 과목</legend>
+            <p>이 달에 신청할 과목을 선택하세요 (1과목만 가능)</p>
+            <input id="s1" type="radio" name="subject" value="speaking">
+            <label for="s1">회화</label>
+            <input id="s2" type="radio" name="subject" value="grammer">
+            <label for="s2">문법</label>
+            <input id="s3" type="radio" name="subject" value="writing">
+            <label for="s3">작문</label>
+            <br>
+            <input type="submit">
+        </fieldset>
+        <fieldset>
+            <legend>메일링</legend>
+            <p>메일로 받고 싶은 주제를 선택하세요(복수선택가능)</p>
+            <input id="m1" type="checkbox" name="mailing" value="speaking">
+            <label for="m1">해외 단신</label>
+            <input id="m2" type="checkbox" name="mailing" value="grammer">
+            <label for="m2">5분 회화</label>
+            <input id="m3" type="checkbox" name="mailing" value="writing">
+            <label for="m3">모닝 팝스</label>
+            <input type="submit">
+        </fieldset>
+    </form>
+</body>
+</html>

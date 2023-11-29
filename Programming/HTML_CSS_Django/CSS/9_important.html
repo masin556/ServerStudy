@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /*우선순위 무시 방법입니다. !important*/
+        * { color : blue !important; }
+        h1 { color : red !important; }
+        .green { color : green; }
+        #orange { color: orange; }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="green" id="orange" style="color:blueviolet;">1차</h1> <!--인라인 선택자가 우선순위가높다-->
+    <h1 class="green" id="orange">2차</h1> <!--id선택자가 가장 우선순위가 높다-->
+    <h1 class="green">3차</h1> <!--클래스가 우선순위가 높다-->
+    <h1>4차</h1>
+</body>
+</html>
