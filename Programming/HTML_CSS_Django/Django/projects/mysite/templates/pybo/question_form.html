@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class = "container">
+    <h5 class = "my-3 border-bottom pd-2"> 질문등록 </h5>
+    {% comment %} <form method ="post" action ="{% url 'pybo:question_create' %}">
+        {% csrf_token %}
+        {{ form.as_p }} {% endcomment %}
+    <form method = "post">
+        {% csrf_token %}
+        <!--오류표시 start-->
+        <div class ="alert alert-danger" role = "alert">
+            {% for field in form %}
+            {% if field.errors %}
+            <div>
+                <strong>{{ field.label }}</strong>
+                {{ field.errors }}
+            </div>
+            {% endif %}
+            {% endfor %}
+        <!--오류 표시 End-->
+        <div class = "mb-3">
+            <lable for="subject" class = "form-lable"> 제목 </label>
+            <input type="text" class = "form-control" name = "subject" id = "subject" 
+            value = "{{ form.subject.value|default_if_none:'' }}">
+        </div>
+        <div class = "mb-3">
+            <lable for = "content" class = "form-lable"> 내용 </label>
+            <textarea class = "form-control" name = "content" id = "content" rows = "10"> 
+                {{ form.content.value|default_if_none:'' }}</textarea>
+        </div>
+        <button type = "submit" class="btn btn-primary">저장하기</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        {% block test %}
+        {% endblock %}
+        <meta charset ="utf-8"> <!--표준 언어 규격-->
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+        <!-- pybo CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <title>Hello, pybo!</title>
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

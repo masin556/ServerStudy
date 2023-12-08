@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+        <style>
+            a {
+                color : black;
+                text-decoration: none;
+            }
+        </style>
+        <div class ="container my-3"> <!--css 클래스 여백과 관련된-->
+            <table class ="table">
+                <thead>
+                    <tr class = "table-dark"> 
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>작성일자</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    {% if question_list %}
+                    {% for question in question_list %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td><a href="{% url 'pybo:detail' question.id %}">{{ question.subject }}</a></td>
+                            <td>{{ question.create_date }}</td>
+                        </tr>
+                        {% endfor %}
+                        {% else %}
+                        <tr>
+                            <td colspan ="3">질문이 없습니다.</td>
+                        </tr>
+                        {% endif %}
+                    </tbody>
+            </table>
+            <a href="{% url 'pybo:question_create' %}" class="btn btn-primary">질문 등록하기 </a>
+        </div>
+{% endblock %}
